@@ -65,6 +65,9 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
+    function addRecord(){
+        
+    }
 
 
 
