@@ -1,5 +1,5 @@
 cities = [["s",0,"c","NE", 71.14,0, 89090,"city 1"], ["u", 1,"m","NE",85.33,0,98988,'city 2'],["r",1,'o',"SE", 100.00,0,90289,'city 3'],["s",0,"m", "SW",106.29,0,78908,'city 4'],['u', 1,'o','W', 55.08,0,90067,'city 5']]
-#Suburban/Urban/Rural, sports y/n, costal/mountain/other, NE/NW/SE/SW/W, cost of living index relative to new york, amount of fulfilled criteria per user, average cs grad salery in the city,city name
+#Suburban/Urban/Rural, sports y/n, costal/mountain/other, NE/MW/SE/SW/W, cost of living relative to ny, amount of fulfilled criteria per user, average cs grad salery in the city,city name
 
 
 sampleUserInputEntry = ["s", 1, "c", 'NE', 1,0]
@@ -51,5 +51,5 @@ for i in ranks:
     for j in liveable_cities:
         if i == j[5]:
             best_fromUserInput.append(j[5])
-            print(str(j[5]) +", rank: "+str(i))
+            print(str(j[7]) +", rank: "+str(i))
             liveable_cities.remove(j)
