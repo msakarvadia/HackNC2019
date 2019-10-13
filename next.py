@@ -26,19 +26,20 @@ for x in range(len(ny_p_i)):
 
 for x in range(len(cities)):
     ranked_cities[x][6] =   cities[x][6]/ny_avg_cs_grad_sal * 100
-    for y in range(len(ny_p_i[x])):
 
+liveable_cities = []
 
-print(ny_p_i_wi)
+for i in range(len(ranked_cities)):
+   if ranked_cities[i][4] < ranked_cities[i][6]+ny_p_i_wi[sampleUserInputEntry[4]][sampleUserInputEntry[5]]:
+       liveable_cities.append(ranked_cities[i])
 
-
-for i in ranked_cities:
+for i in liveable_cities:
     for j in range(4):
         if i[j] == sampleUserInputEntry[j]:
             i[5]+= 1
 
 ranks = []
-for i in ranked_cities:
+for i in liveable_cities:
     ranks.append(i[5])
 
 #print(ranks)
@@ -47,8 +48,8 @@ ranks.sort(reverse = True)
 best_fromUserInput = []
 
 for i in ranks:
-    for j in ranked_cities:
+    for j in liveable_cities:
         if i == j[5]:
             best_fromUserInput.append(j[5])
             print(str(j[5]) +", rank: "+str(i))
-            ranked_cities.remove(j)
+            liveable_cities.remove(j)
