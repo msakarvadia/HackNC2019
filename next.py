@@ -8,7 +8,7 @@ sampleUserInputEntry = ["s", 1, "c", 'NE', 1,0]
 ny_p_i = [[30,34],[92,98]] 
 #ny_profession_industry_starting_saleries
 
-ny_p_i_wi = [[],[]]
+ny_p_i_wi = ny_p_i.copy() 
 #ny professions in different industry starting saleries wage index relative to average cs grad in ny
 
 avg_cs_grad_sal = 89214
@@ -16,6 +16,8 @@ avg_cs_grad_sal = 89214
 for x in range(len(ny_p_i)):
     for y in range(len(ny_p_i[x])):
         ny_p_i_wi[x][y] = ny_p_i[x][y]/avg_cs_grad_sal * 100
+ 
+print(ny_p_i_wi)
 
 ranked_cities = cities.copy()
 #print(ranked_cities)
@@ -29,9 +31,9 @@ ranks = []
 for i in ranked_cities:
     ranks.append(i[5])
 
-print(ranks)
+#print(ranks)
 ranks.sort(reverse = True)
-print(ranks)
+#print(ranks)
 best_fromUserInput = []
 
 for i in ranks:
