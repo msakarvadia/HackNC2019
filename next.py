@@ -1,4 +1,20 @@
-cities = [["s",0,"c","NE", 71.14,0, 89090,"city 1"], ["u", 1,"m","NE",85.33,0,98988,'city 2'],["r",1,'o',"SE", 100.00,0,90289,'city 3'],["s",0,"m", "SW",106.29,0,78908,'city 4'],['u', 1,'o','W', 55.08,0,90067,'city 5']]
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
+
+
+creds = ServiceAccountCredentials.from_json_keyfile_name("HackNC2019-33fe3c4ca3c2.json", scope)
+
+client = gspread.authorize(creds)
+
+sheet = client.open("DataNEXT").sheet1  # Open the spreadhseet
+
+data = sheet.get_all_records()  # Get a list of all records
+
+print(data)
+
+numRows = sheet.row_count  # Get the number of rows in the sheet
 #Suburban/Urban/Rural, sports y/n, costal/mountain/other, NE/MW/SE/SW/W, cost of living relative to ny, amount of fulfilled criteria per user, average cs grad salery in the city,city name
 
 
