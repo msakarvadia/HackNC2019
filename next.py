@@ -2,7 +2,7 @@ cities = [["s",0,"c","NE", 71.14,0, 89090,"city 1"], ["u", 1,"m","NE",85.33,0,98
 #Suburban/Urban/Rural, sports y/n, costal/mountain/other, NE/MW/SE/SW/W, cost of living relative to ny, amount of fulfilled criteria per user, average cs grad salery in the city,city name
 
 
-sampleUserInputEntry = ["s", 1, "c", 'NE', 1,0]
+sampleUserInputEntry = ["r", 1, "c", 'NE', 1,0]
 #Suburban/Urban/Rural, sports y/n, costal/mountain/other, NE/NW/SE/SW/W, job (ie. data scientist), prefered industry (ie. health)
 
 ny_p_i = [[90000,87934],[98782,120998]] 
